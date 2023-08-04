@@ -1,5 +1,5 @@
 locals {
-  instance_name = "${terraform.workspace}-instance"
+  instance_name = "${terraform.workspace}-server"
 }
 
 locals {
