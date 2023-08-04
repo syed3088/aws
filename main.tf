@@ -4,7 +4,7 @@ resource "aws_instance" "ec2_instance" {
   #instance_type = "t2.micro"
   #ami = var.instance_ami["linux"]
   ami             = "${terraform.workspace}" == "rnd" ? var.instance_ami["ubuntu"] : var.instance_ami["linux"]
-  instance_type   = var.instance_type["small"]
+  instance_type   = "${terraform.workspace}" == "rnd" ? var.instance_type["small"] : var.instance_type["medium"]
   security_groups = [aws_security_group.ec2_instance.name]
   tags = {
     Name = local.instance_name

@@ -3,7 +3,7 @@ variable "instance_type" {
   type        = map(string)
   default = {
     "small"  = "t2.micro"
-    "medium" = "t3.micro"
+    "medium" = "t2.nano"
     "large"  = "t3.large"
   }
 }
